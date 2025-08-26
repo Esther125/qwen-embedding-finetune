@@ -29,9 +29,9 @@ swift sft \
   --gradient_accumulation_steps 2 \
   --learning_rate 6e-6 \
   --loss_type cosine_similarity \
-  --drop_last true \
-  --max_seq_len $SEQ_LEN \
-  --bf16 true
+  --drop_last \
+  --max_seq_len "$SEQ_LEN" \
+  --dtype bf16
 
 # 訓練結束後停止 nvidia-smi 紀錄
 kill $NSMI_PID
