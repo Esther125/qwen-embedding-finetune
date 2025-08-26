@@ -31,7 +31,7 @@ swift sft \
   --loss_type cosine_similarity \
   --drop_last true \
   --max_seq_len $SEQ_LEN \
-  --bf16
+  --bf16 true
 
 # 訓練結束後停止 nvidia-smi 紀錄
 kill $NSMI_PID
