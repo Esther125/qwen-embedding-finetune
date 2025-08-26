@@ -18,6 +18,7 @@ swift sft \
   --train_type full \
   --dataset "./data_prepared/train.jsonl:pair" \
   --val_dataset "./data_prepared/val.jsonl:pair" \
+  --dataset_no_filter \
   --split_dataset_ratio 0.05 \
   --eval_strategy steps \
   --output_dir "$OUT_DIR" \
