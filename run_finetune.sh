@@ -16,8 +16,8 @@ swift sft \
   --task_type embedding \
   --model_type qwen3_emb \
   --train_type full \
-  --dataset "jsonl:./data_prepared/train.jsonl:pair" \
-  --val_dataset "jsonl:./data_prepared/val.jsonl:pair" \
+  --dataset "./data_prepared/train.jsonl:pair" \
+  --val_dataset "./data_prepared/val.jsonl:pair" \
   --split_dataset_ratio 0.05 \
   --eval_strategy steps \
   --output_dir "$OUT_DIR" \
