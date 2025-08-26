@@ -1,9 +1,16 @@
 set -e
 
-MODEL=${1:-"Qwen/Qwen3-Embedding-0.6B"}   # 預設 0.6B
-SEQ_LEN=${2:-1024}                        # 預設 1024
+MODEL=${1:-"Qwen/Qwen3-Embedding-0.6B"}
+SEQ_LEN=${2:-1024}
 OUT_DIR="./output-$(basename $MODEL)-len${SEQ_LEN}"
 
+# 開始紀錄 GPU 使用情況，每秒寫一次到檔案
+LOGFILE="${OUT_DIR}/gpu_mem.log"
+mkdir -p $OUT_DIR
+nvidia-smi --query-gpu=timestamp,index,name,memory.used,memory.total --format=csv -l 1 > $LOGFILE 2>&1 &
+NSMI_PID=$!
+
+# === 執行訓練 ===
 swift sft \
   --model "$MODEL" \
   --task_type embedding \
@@ -25,3 +32,8 @@ swift sft \
   --drop_last true \
   --max_seq_len $SEQ_LEN \
   --bf16
+
+# 訓練結束後停止 nvidia-smi 紀錄
+kill $NSMI_PID
+
+echo "GPU memory log saved at $LOGFILE"
