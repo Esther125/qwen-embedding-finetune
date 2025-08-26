@@ -43,13 +43,13 @@ def extract_pairs_from_df(df, out_path):
 
             # 正例：依序輸出
             for t in pos_texts:
-                fw.write(json.dumps({"text1": query, "text2": t, "label": 1.0}, ensure_ascii=False) + "\n")
+                fw.write(json.dumps({"text1": query, "text2": t, "score": 1.0}, ensure_ascii=False) + "\n")
                 n += 1
 
             # 沒正例就補一個負例，避免整列被丟掉
             if not pos_texts and neg_texts:
                 t = random.choice(neg_texts)
-                fw.write(json.dumps({"text1": query, "text2": t, "label": 0.0}, ensure_ascii=False) + "\n")
+                fw.write(json.dumps({"text1": query, "text2": t, "score": 0.0}, ensure_ascii=False) + "\n")
                 n += 1
     print(f"[OK] wrote {n} pairs -> {out_path}")
 
