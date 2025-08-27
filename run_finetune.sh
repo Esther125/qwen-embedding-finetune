@@ -19,7 +19,7 @@ swift sft \
   --dataset /homepool2/liyichen125/workspace/qwen-embedding-finetune/data_prepared/train.jsonl \
   --val_dataset /homepool2/liyichen125/workspace/qwen-embedding-finetune/data_prepared/val.jsonl \
   --columns '{"query":"text1","response":"text2","label":"score"}' \
-  --split_dataset_ratio 0.05 \
+  --use_chat_template false \
   --eval_strategy steps \
   --output_dir "$OUT_DIR" \
   --eval_steps 200 \
