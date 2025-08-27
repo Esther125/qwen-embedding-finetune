@@ -17,8 +17,8 @@ swift sft \
   --model_type qwen3_emb \
   --train_type full \
   --dataset_no_filter \
-  --dataset "/data_prepared/train.jsonl" \
-  --val_dataset "/data_prepared/val.jsonl" \
+  --dataset "jsonl:/homepool2/liyichen125/workspace/qwen-embedding-finetune/data_prepared/train.jsonl:pair" \
+  --val_dataset "jsonl:/homepool2/liyichen125/workspace/qwen-embedding-finetune/data_prepared/val.jsonl:pair" \
   --split_dataset_ratio 0.05 \
   --eval_strategy steps \
   --output_dir "$OUT_DIR" \
