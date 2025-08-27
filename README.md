@@ -53,12 +53,12 @@ python prepare_ms_marco_v21.py
 chmod +x run_finetune.sh
 
 # 小模型 + 512 context
-./run_finetune.sh Qwen/Qwen3-Embedding-0.6B 1024
+./run_finetune.sh Qwen/Qwen3-Embedding-0.6B 512
 
 # 小模型 + 1024 context
 ./run_finetune.sh Qwen/Qwen3-Embedding-0.6B 1024
 
 # 小模型 + 2048 context
-./run_finetune.sh Qwen/Qwen3-Embedding-0.6B 1024
+./run_finetune.sh Qwen/Qwen3-Embedding-0.6B 2048
 
 ```
