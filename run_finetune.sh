@@ -16,7 +16,6 @@ swift sft \
   --task_type embedding \
   --model_type qwen3_emb \
   --train_type full \
-  --dataset_no_filter \
   --dataset "jsonl:/homepool2/liyichen125/workspace/qwen-embedding-finetune/data_prepared/train.jsonl:pair" \
   --val_dataset "jsonl:/homepool2/liyichen125/workspace/qwen-embedding-finetune/data_prepared/val.jsonl:pair" \
   --split_dataset_ratio 0.05 \
