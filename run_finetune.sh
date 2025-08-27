@@ -18,7 +18,7 @@ swift sft \
   --train_type full \
   --dataset /homepool2/liyichen125/workspace/qwen-embedding-finetune/data_prepared/train.jsonl \
   --val_dataset /homepool2/liyichen125/workspace/qwen-embedding-finetune/data_prepared/val.jsonl \
-  --columns '{"query":"text1","response":"text2","label":"score"}' \
+  --columns '{"text1":"text1","text2":"text2","label":"score"}' \
   --eval_strategy steps \
   --output_dir "$OUT_DIR" \
   --eval_steps 200 \
