@@ -4,7 +4,7 @@ set -e
 # 可調整
 CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
 OUT_BASE=${OUT_BASE:-output}
-MODEL=${MODEL:-"Qwen/Qwen2.5-7B-Instruct"}
+MODEL=${MODEL:-"Qwen/Qwen3-Embedding-0.6B"}
 LENS=("512" "1024" "2048")
 
 # swift CLI fallback
