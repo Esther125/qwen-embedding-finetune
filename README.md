@@ -50,11 +50,9 @@ python prepare_ms_marco_v21.py
 ## Finetune
 
 ```bash
-chmod +x run_finetune.sh
-
-# 小模型 + 1024 context
-./run_finetune.sh Qwen/Qwen3-Embedding-0.6B 1024
-
-# 大模型 + 2048 context
-./run_finetune.sh Qwen/Qwen3-Embedding-4B 2048
+CUDA_VISIBLE_DEVICES=0 OUT_BASE=output ./run_sft_mem_sweep.sh
 ```
+
+## Result
+
+### Qwen/Qwen3-Embedding-0.6B
