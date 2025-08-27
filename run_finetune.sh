@@ -4,7 +4,7 @@ MODEL=${1:-"Qwen/Qwen3-Embedding-0.6B"}
 SEQ_LEN=${2:-1024}
 OUT_DIR="./output-$(basename $MODEL)-len${SEQ_LEN}"
 
-# 開始紀錄 GPU 使用情況，每秒寫一次到檔案
+# 開始紀錄使用情況
 LOGFILE="${OUT_DIR}/gpu_mem.log"
 mkdir -p $OUT_DIR
 nvidia-smi --query-gpu=timestamp,index,name,memory.used,memory.total --format=csv -l 1 > $LOGFILE 2>&1 &
