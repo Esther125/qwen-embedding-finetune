@@ -19,29 +19,22 @@ source my_venv/bin/activate
 pip install --upgrade pip
 pip install pandas pyarrow
 pip install torch transformers accelerate datasets evaluate scikit-learn huggingface_hub ms-swift
+pip install -U datasets
 
 ```
 
 ## Prepare Dataset
 
 ```bash
-python prepare_ms_marco_v21.py
+python data_preprocess.py
 ```
-
-將 MS MARCO v2.1 的資料結構轉成 pair + label
-
--   label = 1.0 (正例)
-    當 is_selected == 1 → 表示這段 passage 被標記為正確回答了 query。
--   label = 0.0 (負例)
-    當 is_selected == 0 → 表示 passage 跟 query 不相關。
 
 新的資料集格式：
 
 ```json
 {
-    "text1": "differentiate between population density and population distribution.",
-    "text2": "Population distribution is the way in which people are spread across a given area, whereas population density is the average number of people per square kilometre. It's basically a way of measuring the population distribution. Hope this helps.",
-    "label": 1.0
+  "query": "Does long-term oral melatonin administration reduce ethanol-induced increases in duodenal mucosal permeability and motility in rats?",
+  "response": "Although further studies are needed, our data demonstrate that melatonin administration markedly improves duodenal barrier functions, suggesting its utility in clinical applications when intestinal barrier functions are compromised."
 }
 ```
 
