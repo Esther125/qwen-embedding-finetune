@@ -47,3 +47,12 @@ chmod +x run_finetune.sh
 
 ./run_finetune.sh
 ```
+## Output Model
+```
+python output_model.py
+```
+
+## Evaluation
+```
+python evaluation.py
+```
